@@ -11,18 +11,13 @@ Phase 2 Project: FORAGE
 ## Wireframe:
 
 
-
-Home Page
-<img src= "assets/forage-wireframe-home.png" width="300px"/>
+<img src= "./assets/forage-wireframe-home.png" width="300px"/>
 
 
-Add a Recipe Form
 <img src= "./assets/forage-wireframe-form.png" width="300px"/>
 
 
-
-Recipe Card
-<img src= "assets/forage-wireframe-recipe-card.png" width="300px"/>
+<img src= "./assets/forage-wireframe-recipe-card.png" width="300px"/>
 
 ---
 
@@ -42,7 +37,7 @@ Recipe Card
 
 ## Information Flow Diagram:
 
-<img src= ".assets/information-flow.png" width="300px"/>
+<img src= "./assets/information-flow.png" width="300px"/>
 
 ---
 
