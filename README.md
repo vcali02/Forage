@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# 
+Phase 2 Project: FORAGE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Forage
+ A one stop shop for meal inspo when you don’t know what to make with what’s left in your fridge. *dietary restriction friendly 
 
-## Available Scripts
+## [Github] (https://github.com/vcali02/Forage/edit/main/README.md)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Wireframe:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Home Page
+<img src= "assets/forage-wireframe-home.png" width="300px"/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Add a Recipe Form
+<img src= "./assets/forage-wireframe-form.png" width="300px"/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Recipe Card
+<img src= "assets/forage-wireframe-recipe-card.png" width="300px"/>
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## User story:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Users will be able to…
+1. Navigate to the Home/Main page
+2. Navigate to the About page to learn more about Forage
+3. Filter their recipe search by name
+4. Filter their recipe search based on ingredients
+5. Filter their recipes based on dietary restrictions using a drop down
+6. Click on an image of a meal to flip the recipe card and see the ingredients and the recipe
+7. Click and favorite a recipe (and persists)
+8. Navigate to the Favorites page to see their saved favorites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Information Flow Diagram:
 
-## Learn More
+<img src= ".assets/information-flow.png" width="300px"/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## API Routes:
 
-### Code Splitting
+| API Route                                         | Request Method | Body              | Response             |
+|---------------------------------------------------|----------------|-------------------|----------------------|
+| https://api.edamam.com/api/recipes/v2?type=public | GET            |                   | [{...},{...},{...}]  |
+| localhost/myrecipes                               | POST           | {`recipe object`} | {`id, recipe object`}|
+| localhost/myrecipes                               | GET            |                   | [{...},{...},{...}]  |
+| localhost/myrecipes/id                            | DELETE         |                   | {}                   |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Client Side Routes:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Client Route | Component     |
+|--------------|---------------|
+| /            | RecipeList.js |
+| /home        | RecipeList.js |
+| /search      | Search.js     |
+| /about       | About.js      |
+| /new         | AddRecipe.js  |
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Trello:
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="./assets/trello-01.png" width="300px"/>
+<img src="./assets/trello-02.png" width="300px"/>
