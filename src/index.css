@@ -1,13 +1,84 @@
-body {
+* {
+  padding: 0;
+  margin: 0;
+  /* box-sizing: border-box; */
+}
+
+
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+/* .recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+} */
+
+:root {
+  --primary-color: grey; 
+  --secondary-color: #e7ece4; 
 }
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-family: 
+}
+
+/* Example of styling a specific element */
+/* .recipe-title {
+  color: var(--primary-color);
+} */
+/* .recipe-card {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+} */
+
+/* .recipe-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+} */
+/* 
+.recipe-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+} */
+
+/* .recipe-description {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #888;
+} */
+
+/* button {
+  padding: 0.25rem 1rem;
+  font-family: inherit;
+  border: ;
+  cursor: pointer;
+  color: #7ac070;
+  display: flex; */
+  /* justify-content: center; */
+  /* flex-direction: column;
+  margin-top: 15px;
+} */
+
+/* button.primary {
+  color: #7ac070;
+  
+} */
