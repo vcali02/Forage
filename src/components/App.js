@@ -1,10 +1,10 @@
 import {useState, useEffect} from 'react';
+import { BrowserRouter, Route} from "react-router-dom";
+import ReactDOM from 'react-dom';
 import logo from '../logo.svg';
 // import '../App.css';
-import Header from './Header'
 import About from './About';
 import RecipeForm from './RecipeForm';
-import Search from './Search';
 import RecipeList from './RecipeList';
 
 
@@ -13,9 +13,16 @@ import RecipeList from './RecipeList';
 function App() {
   //STEP 1. GET state variables
   const [recipes, setRecipes] = useState([])
-  //search state variables
+  //STEP 2. search state variables
   const [search, setSearch] = useState("")
+  //STEP 3. show form variables
+  const [showForm, setShowForm] = useState(false)
 
+
+//step 3. hiding and showing the form
+function handleClick() {
+  setShowForm((showForm) => !showForm);
+}
 
 
 
@@ -55,7 +62,7 @@ function changeRecipes(array){
 }
 
 
-
+//STEP 3. adding recipes submitted in the form to the db.json
 function addRecipe(recipe){
   setRecipes(
     [...recipes, recipe]
@@ -66,15 +73,16 @@ function addRecipe(recipe){
 
   return (
     <div className="App" >
-      <Header/>
-      <About/>
-      <RecipeForm addRecipe={addRecipe}/>
-      <Search search={search} setSearch={setSearch} changeRecipes={changeRecipes}/>
-      <RecipeList recipes={filteredRecipes}/>
+      <header className="header"><h1>Forage</h1></header>
+      <nav>
+        <About/>
+        {showForm ? <RecipeForm addRecipe={addRecipe}/> : null}</nav>
+      <button onClick={handleClick} className="new-recipe-form-button">Add a Recipe</button>
+      <RecipeList recipes={filteredRecipes} search={search} setSearch={setSearch} changeRecipes={changeRecipes}/>
     </div>
   );
 }
 
-
+// ReactDOM.render(<App />, document.getElementById("root"))
 
 export default App;

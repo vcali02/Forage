@@ -3,6 +3,17 @@ import React, {useState} from 'react'
 function RecipeCard({recipe}) {
   //flip state
   const [isFlipped, setFlip] = useState(false)
+  //2. favorite/unfavorite state
+  const [isFavorite, setFavorite] = useState(true)
+
+
+
+  //2. click event to toggle between favorite and unfavorite
+  function handleFavoriteClick(e){
+  //UPDATE state to reflect the opposite of its current state
+  setFavorite(!isFavorite)
+  }
+
 
 
   //click event for card flip
@@ -16,6 +27,16 @@ function RecipeCard({recipe}) {
   return (
     
     <li className="card" onClick={(e) => handleClick(e)}>
+       {/*ternary to toggle favorite/unfavorite*/}
+       {isFavorite ? (
+          <button 
+          className="emoji-button favorite active" 
+          onClick={(e) => handleFavoriteClick(e)}>★</button>
+        ) : (
+          <button 
+          className="emoji-button favorite" 
+          onClick={(e) => handleFavoriteClick(e)}>☆</button>
+        )}
       {
         isFlipped ?
         (<>

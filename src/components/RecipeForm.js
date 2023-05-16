@@ -44,12 +44,14 @@ function RecipeForm({addRecipe}) {
      <div className="new-recipe-form" >
      <h2>New Recipe</h2>
      <form onSubmit={(e) => handleSubmit(e)}>
+       
        <input 
        value= {form.label} 
        type="text" 
        name="label" 
        placeholder="Recipe name" 
        onChange={(e) => handleChange(e)}
+       className="new-recipe-form-input"
        />
        <input 
        value= {form.healthLabel} 
@@ -57,6 +59,7 @@ function RecipeForm({addRecipe}) {
        name="healthLabel"  
        placeholder="Health Label" 
        onChange={(e) => handleChange(e)}
+       className="new-recipe-form-input"
        />
        <input 
        value= {form.recipe} 
@@ -64,6 +67,7 @@ function RecipeForm({addRecipe}) {
        name="recipe"  
        placeholder="Recipe" 
        onChange={(e) => handleChange(e)}
+       className="new-recipe-form-input"
        />
        <input 
        value= {form.image} 
@@ -71,8 +75,9 @@ function RecipeForm({addRecipe}) {
        name="image" 
        placeholder="Image URL" 
        onChange={(e) => handleChange(e)}
+       className="new-recipe-form-input"
        />
-       <button type="submit">Add Recipe</button>
+        <button type="submit" name="submit" className="new-recipe-form-button">Add Recipe</button>
      </form>
    </div>
   )

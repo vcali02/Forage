@@ -27,17 +27,23 @@ function handleAPIChange(e){
 }
   
   return (
-    <div className="search">
+    <div className="search-box">
     <input 
     value={search}
     type="text" 
     placeholder="filter here"
-    className="searchTerm"
     onChange={(e) => handleChange(e)} 
+    className="search-input-filter"
     />
 
-    <input type="text" onChange={(e)=>handleAPIChange(e)} value={ApiSearch} placeholder="search ingredient here"></input>
-    <button onClick={(e)=>handleSubmit(e)}>Search</button>
+    <input 
+    type="text" 
+    onChange={(e)=>handleAPIChange(e)} 
+    value={ApiSearch} 
+    placeholder="search ingredient here"
+    className="search-input"/>
+    <button onClick={(e)=>handleSubmit(e)}
+    className="search-button">Search</button>
 
   </div>
   )

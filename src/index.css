@@ -1,9 +1,39 @@
+/*GLOBAL SELECTOR*************************************************************/
 * {
   padding: 0;
   margin: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
+/*LARGE LAYOUT****************************************************************/
+:root {
+  --primary-color: grey; 
+  --secondary-color: #e7ece4; 
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-family: 
+}
+
+/*HEADER**********************************************************************/
+.header {
+  text-align: center;
+  list-Style: none;
+  margin: 15px 10px;
+  padding: 5px;
+  border-Radius: 12px;
+  background-Color: white;
+  grid-Row-End: span 33;
+  margin-Top: 5px;
+  margin-Left: 500px;
+  margin-Right: 500px;
+  font-size: 50px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+/*MAIN PAGE*******************************************************************/
 .recipe-list {
   margin : 0;
   padding: 0;
@@ -17,118 +47,186 @@
 
 }
 
+/*SINGLE CARD*****************************************************************/
 .card {
   font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
   text-align: center;
   list-Style: none;
   margin: 15px 10px;
-  padding: 25px;
+  padding: 10px;
   border-Radius: 15px;
   background-Color: #a3b697;
   grid-Row-End: span 33;
   margin-Top: 10px;
-  margin-Left: 25px;
-  margin-Right: 2px;
+  margin-Left: auto; /*25px*/
+  margin-Right: auto; /*-23px*/
 }
 
 .recipe-image {
-  border: 2px solid white;
+  /*border: 2px solid white;*/
   display: block;
+  /*image sizing*/
+  height: auto;
+  width: auto;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.header {
+.emoji-button {
+  border: none;
+  background: none;
+  padding: 0 0.25rem;
+  cursor: pointer;
+}
+
+.emoji-button.favorite {
+  color: transparent;
+  text-shadow: 0 0 0 gray;
+}
+
+.emoji-button.favorite.active,
+.emoji-button.favorite:hover {
+  text-shadow: 0 0 0 white;
+  cursor: pointer;
+}
+/*RECIPE FORM*****************************************************************/
+.new-recipe-form {
+  text-align: center;
   text-align: center;
   list-Style: none;
   margin: 5px 5px;
   padding: 5px;
   border-Radius: 12px;
-  background-Color: white;
+  background-Color: #a3b697;
   grid-Row-End: span 33;
   margin-Top: 5px;
   margin-Left: 25px;
   margin-Right: 2px;
-  font-size: 100px;
+  font-size: 20px;
   font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
 }
 
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
-/* .recipe-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-} */
-
-:root {
-  --primary-color: grey; 
-  --secondary-color: #e7ece4; 
-}
-
-body {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  font-family: 
-}
-
-/* Example of styling a specific element */
-/* .recipe-title {
-  color: var(--primary-color);
-} */
-/* .recipe-card {
-  background-color: var(--secondary-color);
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+.new-recipe-form-input {
   text-align: center;
-} */
-
-/* .recipe-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-} */
-/* 
-.recipe-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 10px;
-} */
-
-/* .recipe-description {
-  font-size: 14px;
-  margin-top: 5px;
-  color: #888;
-} */
-
-/* button {
-  padding: 0.25rem 1rem;
-  font-family: inherit;
-  border: ;
-  cursor: pointer;
-  color: #7ac070;
-  display: flex; */
-  /* justify-content: center; */
-  /* flex-direction: column;
-  margin-top: 15px;
-} */
-
-/* button.primary {
-  color: #7ac070;
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 100px;
+  /* color: #e7e5e4; */
+  color: white;
   
-} */
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 150px;
+  margin-left: 200px;
+}
+
+.new-recipe-form-button {
+  text-align: center;
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 100px;
+  color: grey;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 150px;
+  margin-left: 200px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;;
+}
+
+/*ABOUT**********************************************************************/
+.about {
+  text-align: center;
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 100px;
+  color: grey;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 150px;
+  margin-left: 200px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;;
+}
+
+/*SEARCH**********************************************************************/
+.search-box {
+  text-align: center;
+  list-Style: none;
+  margin: 50px 5px;
+  padding: 25px;
+  border-Radius: 12px;
+  background-Color: white;
+  grid-Row-End: span 33;
+  margin-Top: 5px;
+  margin-Left: 210px;
+  margin-Right: 210px;
+  font-size: 20px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+.search-input-filter {
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 12px;
+  color: grey;
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 1;
+  width: 150px;
+  margin-left: 20px;
+}
+
+.search-input {
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 12px;
+  color: grey;
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 1;
+  width: 1000px;
+  margin-left: 2px;
+}
+
+.search-button {
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 12px;
+  color: grey;
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 150px;
+  margin-left: 2px;
+}
+input:hover {
+  opacity: 0.5;
+}
+
+button:hover{
+  opacity: 0.5;
+}
+
+
+
+
+
+
+
+
