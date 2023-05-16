@@ -19,18 +19,230 @@ body {
 
 /*HEADER**********************************************************************/
 .header {
+  position: sticky;
   text-align: center;
   list-Style: none;
   margin: 15px 10px;
   padding: 5px;
-  border-Radius: 12px;
+  border-Radius: 120px;
   background-Color: white;
   grid-Row-End: span 33;
   margin-Top: 5px;
-  margin-Left: 500px;
-  margin-Right: 500px;
+  margin-Left: 400px;
+  margin-Right: 400px;
   font-size: 50px;
   font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+.nav-bar {
+  margin-left: 350px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+.nav-links {
+  text-align: center;
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 100px;
+  color: grey;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 150px;
+  margin-left: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;;
+}
+
+nav a.active{
+  color: forestgreen;
+  border-bottom: 2px solid forestgreen;
+}
+
+nav a:hover{
+  color: forestgreen;
+}
+/*RECIPE FORM*****************************************************************/
+.new-recipe-form {
+  text-align: center;
+  list-Style: none;
+  padding: 5px;
+  border-Radius: 30px;
+  background-Color: #a3b697;
+  grid-Row-End: span 33;
+  margin-Top: 30px;
+  margin-Left: 200px;
+  margin-Bottom: 30px;
+
+  font-size: 20px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  width: 950px;
+  height: 400px;
+}
+
+.new-recipe-form-input {
+  text-align: left;
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 100px;
+  /* color: #e7e5e4; */
+  color: grey;
+  
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 800px;
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+
+.new-recipe-form-input-ingredients {
+  text-align: left;
+  text-overflow: wrap;
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 25px;
+  /* color: #e7e5e4; */
+  color: grey;
+  
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 800px;
+  margin-left: 20px;
+  margin-bottom: 12px;
+  height: 100px;
+}
+
+.new-recipe-form-button {
+  text-align: center;
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 100px;
+  /* color: #e7e5e4; */
+  color: grey;
+  
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 150px;
+  margin-left: 20px;
+  margin-bottom: 12px;
+  /*making the recipe button fit within the form*/
+  margin-top: -12px;
+}
+
+/*ABOUT**********************************************************************/
+.about {
+  text-align: center;
+  border: none;
+  
+  color: grey;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  
+  font-size: 40px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;;
+}
+
+.about-text{
+  text-align: center;
+  border: none;
+  margin-top: 30px;
+}
+/* .header-format {
+  margin : 0;
+  padding: 0;
+  width: 80vw;
+  position: absolute;
+  left: 53.5%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-Template-Columns: repeat(auto-fill, 250px);
+  grid-Auto-Rows: auto;
+} */
+
+/*SEARCH**********************************************************************/
+.search-box {
+  position: sticky;
+  text-align: center;
+  list-Style: none;
+  margin: 50px 5px;
+  padding: 25px;
+  border-Radius: 12px;
+  background-Color: white;
+  grid-Row-End: span 33;
+  margin-Top: 15px;
+  margin-Left: 210px;
+  margin-Right: 210px;
+  font-size: 20px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  
+}
+
+.search-input-filter {
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 12px;
+  color: grey;
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 1;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-input {
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 12px;
+  color: grey;
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 1;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-button {
+  border: none;
+  padding: 12px 24px;
+  background: #d2dbcc;
+  border-radius: 12px;
+  color: grey;
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+input:hover {
+  opacity: 0.5;
+}
+
+button:hover{
+  opacity: 0.5;
 }
 
 /*MAIN PAGE*******************************************************************/
@@ -39,11 +251,12 @@ body {
   padding: 0;
   width: 80vw;
   position: absolute;
-  left: 50%;
+  left: 53.5%;
   transform: translateX(-50%);
   display: grid;
   grid-Template-Columns: repeat(auto-fill, 250px);
   grid-Auto-Rows: auto;
+  
 
 }
 
@@ -52,22 +265,28 @@ body {
   font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
   text-align: center;
   list-Style: none;
-  margin: 15px 10px;
+  margin: 15px 15px;
   padding: 10px;
   border-Radius: 15px;
   background-Color: #a3b697;
   grid-Row-End: span 33;
   margin-Top: 10px;
-  margin-Left: auto; /*25px*/
-  margin-Right: auto; /*-23px*/
+  margin-Left: 25px; /*25px*/
+  margin-Right: 25px; /*-23px*/
 }
+
+/* .recipe-title-side-1 {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+} */
 
 .recipe-image {
   /*border: 2px solid white;*/
   display: block;
   /*image sizing*/
   height: auto;
-  width: auto;
+  width: 180px;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
@@ -90,137 +309,6 @@ body {
 .emoji-button.favorite:hover {
   text-shadow: 0 0 0 white;
   cursor: pointer;
-}
-/*RECIPE FORM*****************************************************************/
-.new-recipe-form {
-  text-align: center;
-  text-align: center;
-  list-Style: none;
-  margin: 5px 5px;
-  padding: 5px;
-  border-Radius: 12px;
-  background-Color: #a3b697;
-  grid-Row-End: span 33;
-  margin-Top: 5px;
-  margin-Left: 25px;
-  margin-Right: 2px;
-  font-size: 20px;
-  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-}
-
-.new-recipe-form-input {
-  text-align: center;
-  border: none;
-  padding: 12px 24px;
-  background: #d2dbcc;
-  border-radius: 100px;
-  /* color: #e7e5e4; */
-  color: white;
-  
-  font-family: inherit;
-  letter-spacing: 1.5px;
-  font-weight: 500;
-  text-transform: uppercase;
-  width: 150px;
-  margin-left: 200px;
-}
-
-.new-recipe-form-button {
-  text-align: center;
-  border: none;
-  padding: 12px 24px;
-  background: #d2dbcc;
-  border-radius: 100px;
-  color: grey;
-  letter-spacing: 1.5px;
-  font-weight: 500;
-  text-transform: uppercase;
-  width: 150px;
-  margin-left: 200px;
-  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;;
-}
-
-/*ABOUT**********************************************************************/
-.about {
-  text-align: center;
-  border: none;
-  padding: 12px 24px;
-  background: #d2dbcc;
-  border-radius: 100px;
-  color: grey;
-  letter-spacing: 1.5px;
-  font-weight: 500;
-  text-transform: uppercase;
-  width: 150px;
-  margin-left: 200px;
-  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;;
-}
-
-/*SEARCH**********************************************************************/
-.search-box {
-  text-align: center;
-  list-Style: none;
-  margin: 50px 5px;
-  padding: 25px;
-  border-Radius: 12px;
-  background-Color: white;
-  grid-Row-End: span 33;
-  margin-Top: 5px;
-  margin-Left: 210px;
-  margin-Right: 210px;
-  font-size: 20px;
-  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-}
-
-.search-input-filter {
-  border: none;
-  padding: 12px 24px;
-  background: #d2dbcc;
-  border-radius: 12px;
-  color: grey;
-  font-family: inherit;
-  letter-spacing: 1.5px;
-  font-weight: 500;
-  text-transform: uppercase;
-  opacity: 1;
-  width: 150px;
-  margin-left: 20px;
-}
-
-.search-input {
-  border: none;
-  padding: 12px 24px;
-  background: #d2dbcc;
-  border-radius: 12px;
-  color: grey;
-  font-family: inherit;
-  letter-spacing: 1.5px;
-  font-weight: 500;
-  text-transform: uppercase;
-  opacity: 1;
-  width: 1000px;
-  margin-left: 2px;
-}
-
-.search-button {
-  border: none;
-  padding: 12px 24px;
-  background: #d2dbcc;
-  border-radius: 12px;
-  color: grey;
-  font-family: inherit;
-  letter-spacing: 1.5px;
-  font-weight: 500;
-  text-transform: uppercase;
-  width: 150px;
-  margin-left: 2px;
-}
-input:hover {
-  opacity: 0.5;
-}
-
-button:hover{
-  opacity: 0.5;
 }
 
 

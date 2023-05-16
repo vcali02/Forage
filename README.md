@@ -58,7 +58,6 @@ Phase 2 Project: FORAGE
 |--------------|---------------|
 | /            | RecipeList.js |
 | /home        | RecipeList.js |
-| /search      | Search.js     |
 | /about       | About.js      |
 | /new         | AddRecipe.js  |
 

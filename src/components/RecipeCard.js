@@ -40,14 +40,14 @@ function RecipeCard({recipe}) {
       {
         isFlipped ?
         (<>
-        <h4 className="recipe-title" >{recipe.recipe.label}</h4>
+        <h4 className="recipe-title-side-2" >{recipe.recipe.label}</h4>
           <p>Ingredients: {ingredientString}</p>
           <br></br>
           <p>Health Labels: {healthLabelString}</p>
         </>)
         :
         (<>
-          <h4 className="recipe-title" >{recipe.recipe.label}</h4>
+          <h4 className="recipe-title-side-1" >{recipe.recipe.label}</h4>
           <img className="recipe-image" src={recipe.recipe.images.SMALL.url} alt={recipe.recipe.label} />
         </>)
       }

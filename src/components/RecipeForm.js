@@ -23,18 +23,20 @@ function RecipeForm({addRecipe}) {
 
   function handleSubmit(e){
     e.preventDefault()
-    console.log(form)
+    //console.log(form)
     fetch("http://localhost:3000/myRecipes", {
       method: 'POST',
-      body: JSON.stringify(form),
+      mode: 'no-cors',
       headers: {
-        "content-type" : "application/json"
+        "content-type" : "application/json",
+      body: JSON.stringify(form)
       }
     })
     .then(res => res.json())
     .then(data => {
-      addRecipe(data)
-      setForm(formTemplate)
+        console.log(data)
+    //   addRecipe(data)
+    //   setForm(formTemplate)
     })
   }
 
@@ -62,20 +64,20 @@ function RecipeForm({addRecipe}) {
        className="new-recipe-form-input"
        />
        <input 
-       value= {form.recipe} 
-       type="text" 
-       name="recipe"  
-       placeholder="Recipe" 
-       onChange={(e) => handleChange(e)}
-       className="new-recipe-form-input"
-       />
-       <input 
        value= {form.image} 
        type="text" 
        name="image" 
        placeholder="Image URL" 
        onChange={(e) => handleChange(e)}
        className="new-recipe-form-input"
+       />
+       <input 
+       value= {form.recipe} 
+       type="text" 
+       name="recipe"  
+       placeholder="Recipe" 
+       onChange={(e) => handleChange(e)}
+       className="new-recipe-form-input-ingredients"
        />
         <button type="submit" name="submit" className="new-recipe-form-button">Add Recipe</button>
      </form>
