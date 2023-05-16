@@ -1,5 +1,5 @@
 {
-    "hits": [
+    "myRecipes": [
       {
         "recipe": {
           "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_bbfc1a248bd6fe277e35fe01027de91f",

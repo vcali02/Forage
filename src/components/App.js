@@ -30,7 +30,7 @@ function App() {
   // console.log(recipes.hits)
 
     useEffect(() => {
-      fetch("http://localhost:3000/hits")
+      fetch("http://localhost:3000/myRecipes")
       .then(resp => resp.json())
       .then(data => setRecipes(data))
     },[])
@@ -56,11 +56,19 @@ function changeRecipes(array){
 
 
 
+function addRecipe(recipe){
+  setRecipes(
+    [...recipes, recipe]
+  )
+} 
+
+
+
   return (
     <div className="App" >
       <Header/>
       <About/>
-      <RecipeForm />
+      <RecipeForm addRecipe={addRecipe}/>
       <Search search={search} setSearch={setSearch} changeRecipes={changeRecipes}/>
       <RecipeList recipes={filteredRecipes}/>
     </div>

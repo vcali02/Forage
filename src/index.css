@@ -4,6 +4,56 @@
   /* box-sizing: border-box; */
 }
 
+.recipe-list {
+  margin : 0;
+  padding: 0;
+  width: 80vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-Template-Columns: repeat(auto-fill, 250px);
+  grid-Auto-Rows: auto;
+
+}
+
+.card {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  text-align: center;
+  list-Style: none;
+  margin: 15px 10px;
+  padding: 25px;
+  border-Radius: 15px;
+  background-Color: #a3b697;
+  grid-Row-End: span 33;
+  margin-Top: 10px;
+  margin-Left: 25px;
+  margin-Right: 2px;
+}
+
+.recipe-image {
+  border: 2px solid white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.header {
+  text-align: center;
+  list-Style: none;
+  margin: 5px 5px;
+  padding: 5px;
+  border-Radius: 12px;
+  background-Color: white;
+  grid-Row-End: span 33;
+  margin-Top: 5px;
+  margin-Left: 25px;
+  margin-Right: 2px;
+  font-size: 100px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
 
 /* body {
   margin: 0;
