@@ -2,7 +2,6 @@ import {useState, useEffect} from 'react';
 import { Switch, Route} from "react-router-dom";
 import ReactDOM from 'react-dom';
 import logo from '../logo.svg';
-// import '../App.css';
 import About from './About';
 import RecipeForm from './RecipeForm';
 import RecipeList from './RecipeList';
@@ -18,15 +17,7 @@ function App() {
   const [search, setSearch] = useState("")
   //STEP 3. show form variables
   const [showForm, setShowForm] = useState(false)
-  //add new recipes
-  const [myRecipes, setMyRecipes] = useState([])
-
-
-//step 3. hiding and showing the form
-function handleClick() {
-  setShowForm((showForm) => !showForm);
-}
-
+  
 
 
   //will live in Search component to ensure rendering occurs with CLICK
@@ -40,74 +31,56 @@ function handleClick() {
   // console.log(recipes.hits)
 
 
-    console.log(recipes)
+    // console.log(recipes)
 
 
-//filter recipes
+//STEP 2. filter recipes
 const filteredRecipes = [...recipes].filter((el) => {
   return el.recipe.label.toLowerCase().includes(search.toLowerCase()) 
 })
 
-
-// || el.recipe.healthLabels.toLowerCase().includes(search.toLowerCase())
-// || el.recipe.ingredients.toLowerCase().includes(search.toLowerCase())
-// console.log(recipes[0].recipe.label.toLowerCase())
-
-
-
+//STEP
 function changeRecipes(array){
   setRecipes(array)
 }
 
 
-//STEP 3. adding recipes submitted in the form to the db.json
-function addRecipe(recipe){
-  setMyRecipes(
-    [...myRecipes, recipe]
-  )
-} 
+// //STEP 3. adding recipes submitted in the form to the db.json
+// function addRecipe(recipe){
+//   setRecipes(
+//     [...recipes, recipe]
+//   )
+// } 
 
 
 
   return (
     <div className="App" >
-      {/* 
-        <About className="header-buttons"/>
-        <button className="header-buttons">Home</button>
-        {showForm ? <RecipeForm header-format addRecipe={addRecipe}/> : null}
-        <button onClick={handleClick} className="header-buttons">Add a Recipe</button>
-        <button className="header-buttons">My Recipes</button>
-        <RecipeList recipes={filteredRecipes} search={search} setSearch={setSearch} changeRecipes={changeRecipes}/>
-
-        <header className="header"><h1>Forage</h1></header> */}
-
+      {/**user routes**/}
       <header className="header"><h1>Forage</h1></header>  
       <NavBar/>
         <Switch>
-
+          {/**user route to home**/}
           <Route path = "/home">
             <RecipeList recipes={filteredRecipes} search={search} setSearch={setSearch} changeRecipes={changeRecipes}/>
           </Route>
-
+          {/**user route to recipe form**/}
           <Route path="/new">
-            <RecipeForm addRecipe={addRecipe}/>
+            <RecipeForm />
           </Route>
-        
+          {/**user route to about page**/}
           <Route path="/about">
            <About className="header-buttons"/>
           </Route>
-
+          {/**user route to my recipes**/}
           <Route path="/myrecipes">
-            <MyRecipes myRecipes={myRecipes} setMyRecipes={setMyRecipes}/>
+            <MyRecipes />
           </Route>
-
+          {/**user route to main/home**/}
           <Route path = "/">
             <RecipeList recipes={filteredRecipes} search={search} setSearch={setSearch} changeRecipes={changeRecipes}/>
           </Route>
         </Switch>
-
-      
-      
     </div>
   );
 }

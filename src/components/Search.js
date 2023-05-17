@@ -2,39 +2,77 @@ import {useState} from 'react'
 
 function Search({search, setSearch, changeRecipes}) {
 
-const [ApiSearch, setApiSearch] = useState("")
+  const [ApiSearch, setApiSearch] = useState("")
+  const [open, setOpen] = useState(false)
 
-//controlled form
-//1 form state
-//2 connect value of input with form state
-//3 onchange function
-//4 onsubmit function that will send fetch request to API
+  const healthLabelForm = 
+    {
+      "Vegan" : false,
+      "Vegetarian": false,
+      "Pescatarian" : false,
+      "Mediterranean" : false,
+      "Dairy-Free" : false,
+      "Egg-Free" : false,
+      "Peanut-Free" : false,
+      "Tree-Nut-Free" : false,
+      "Soy-Free" : false,
+      "Fish-Free" : false,
+      "Shellfish-Free" : false,
+      "Pork-Free" : false,
+      "Red-Meat-Free" : false,
+      "Crustacean-Free" : false,
+      "Celery-Free" : false,
+      "Mustard-Free" : false,
+      "Sesame-Free" : false,
+      "Lupine-Free" : false,
+      "Mollusk-Free" : false,
+      "Alcohol-Free" : false,
+      "Sulfite-Free" : false,
+      "Kosher" : false
+    }
 
-function handleChange(e){
-  setSearch(e.target.value)
-}
+  const [labelForm, setLabelForm] = useState(healthLabelForm)
 
-function handleAPIChange(e){
-    setApiSearch(e.target.value)
+
+
+  function handleChange(e){
+    setSearch(e.target.value)
   }
 
-  function handleSubmit(e){
-    e.preventDefault()
-    console.log(ApiSearch)
-    fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${ApiSearch}&app_id=1b69287b&app_key=3548c1c8ddcced686bdb0bea5fc04678`)
-    .then(resp => resp.json())
-    .then(data => changeRecipes(data.hits))
-}
+  function handleAPIChange(e){
+      setApiSearch(e.target.value)
+    }
+
+    function handleSubmit(e){
+      e.preventDefault()
+      // console.log(ApiSearch)
+      fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${ApiSearch}&app_id=1b69287b&app_key=3548c1c8ddcced686bdb0bea5fc04678`)
+      .then(resp => resp.json())
+      .then(data => changeRecipes(data.hits))
+  }
+
+  function handleOpen(){
+    setOpen(prev=>!prev)
+  }
   
+  function handleCheckbox(e){
+    setLabelForm({...labelForm, [e.target.name]: (!e.target.checked)})
+    console.log(labelForm['Dairy-Free'])
+    
+  }
+
   return (
     <div className="search-box">
-    <input 
+      <button className= "advanced-search" onClick={() => handleOpen()}>Advanced Search</button>
+    {/* <input 
     value={search}
     type="text" 
     placeholder="filter here"
     onChange={(e) => handleChange(e)} 
     className="search-input-filter"
-    />
+    /> */}
+
+    
 
     <input 
     type="text" 
@@ -44,6 +82,23 @@ function handleAPIChange(e){
     className="search-input"/>
     <button onClick={(e)=>handleSubmit(e)}
     className="search-button">Search</button>
+
+
+
+    {open ? 
+
+    (<ul>
+      <ul>
+        <label>Dairy-Free
+          <input type='checkbox' name="Dairy-Free" checked={labelForm['Dairy-Free']} onChange={(e)=>handleCheckbox(e)}></input>
+          
+        </label>
+      </ul>
+    </ul>) 
+
+    : null}
+    
+
 
   </div>
   )

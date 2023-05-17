@@ -3,7 +3,7 @@ import RecipeCard from './RecipeCard'
 import Search from './Search.js'
 
 
-//takes the array of recipes as a prop
+//STEP 1. takes the array of recipes as a prop
 function RecipeList({recipes, search, setSearch, changeRecipes}) {
   return (
     <>
@@ -14,7 +14,7 @@ function RecipeList({recipes, search, setSearch, changeRecipes}) {
           
         {
           [...recipes].map((recipe, index) => {
-              return <RecipeCard key={index} recipe={recipe} />
+              return <RecipeCard key={index} recipe={recipe} parentFavorite={false} />
           })
         } 
       </div>

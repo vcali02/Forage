@@ -1,12 +1,15 @@
 import React, {useState} from 'react'
 
-function RecipeForm({addRecipe}) {
+//previous prop {addRecipe}
+function RecipeForm() {
 
   const formTemplate = {
     label: "",
-    healthLabel: "",
+    healthLabels: true,
+    ingredients: "",
     recipe: "",
     image: "",
+    mealType: ""
   }
 
   const [form, setForm] = useState(formTemplate)
@@ -23,18 +26,16 @@ function RecipeForm({addRecipe}) {
 
   function handleSubmit(e){
     e.preventDefault()
-    //console.log(form)
     fetch("http://localhost:3000/myRecipes", {
       method: 'POST',
       headers: {
         "content-type" : "application/json"},
-      body: JSON.stringify(form)
+      body: JSON.stringify({recipe:form})
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data)
     //   addRecipe(data)
-    //   setForm(formTemplate)
+       setForm(formTemplate)
     })
   }
 
@@ -54,9 +55,9 @@ function RecipeForm({addRecipe}) {
        className="new-recipe-form-input"
        />
        <input 
-       value= {form.healthLabel} 
-       type="text" 
-       name="healthLabel"  
+       value= {form.healthLabels} 
+       type="checkbox" 
+       name="healthLabels"  
        placeholder="Health Label" 
        onChange={(e) => handleChange(e)}
        className="new-recipe-form-input"

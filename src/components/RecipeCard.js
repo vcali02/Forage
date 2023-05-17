@@ -1,18 +1,44 @@
 import React, {useState} from 'react'
 
-function RecipeCard({recipe}) {
+function RecipeCard({recipe, parentFavorite}) {
   //flip state
   const [isFlipped, setFlip] = useState(false)
   //2. favorite/unfavorite state
-  const [isFavorite, setFavorite] = useState(false)
+  const [isFavorite, setFavorite] = useState(parentFavorite)
 
 
-
-  //2. click event to toggle between favorite and unfavorite
-  function handleFavoriteClick(e){
-  //UPDATE state to reflect the opposite of its current state
-  setFavorite(!isFavorite)
+  function postRecipe(){
+      fetch('http://localhost:3000/myRecipes', {
+        method: 'POST',
+        headers: {"content-type" : "application/json"},
+        body: JSON.stringify(recipe)
+      })
+      .then(resp => resp.json())
+      .then(resp => console.log(resp))
   }
+
+  function deleteRecipe(){
+       fetch(`http://localhost:3000/myRecipes/${recipe.id}`, {
+         method: 'DELETE'
+       })
+  }
+  
+
+  //STEP 2. click event to toggle between favorite and unfavorite
+  function handleFavoriteClick(e){
+    //UPDATE state to reflect the opposite of its current state
+    let tempFav = isFavorite;
+    setFavorite(prev => !prev)
+    //console.log(recipe)
+    //if true, invoke post function, if false, invoke delete function
+    //only activated with click(!)
+    !tempFav ? postRecipe() : deleteRecipe()
+    //don't want it outside bc would execute in an uncontrolled manner
+    //click controls the activation 
+     
+  }
+//sideeffect use effect with isfavorite as dependency line 34 as callback in useeffect
+
 
 
 
@@ -21,8 +47,16 @@ function RecipeCard({recipe}) {
     setFlip(!isFlipped)
   }
 
-    let healthLabelString = recipe.recipe.healthLabels.join(', ')
-    let ingredientString = recipe.recipe.ingredientLines.join(', ')
+
+
+    //STEP 3. FORM: conditional to differentiate b/t API and local host
+    let healthLabelString = recipe.recipe.healthLabels
+    if(typeof healthLabelString === "object") {recipe.recipe.healthLabels.join(', ')}
+    let ingredientString = recipe.recipe.ingredientLines
+    if(typeof ingredientString === "object") {recipe.recipe.ingredientLines.join(', ')}
+
+    let recipeImage = ""
+    recipe.recipe.images === undefined ? recipeImage = recipe.recipe.image : recipeImage = recipe.recipe.images.SMALL.url
 
   return (
     
@@ -40,6 +74,7 @@ function RecipeCard({recipe}) {
         )}
         </li>
         <li onClick={(e) => handleClick(e)}>
+        {/*ternary to toggle front/back card*/}
         {
         isFlipped ?
         (<>
@@ -51,7 +86,7 @@ function RecipeCard({recipe}) {
         :
         (<>
           <h4 className="recipe-title-side-1" >{recipe.recipe.label}</h4>
-          <img className="recipe-image" src={recipe.recipe.images.SMALL.url} alt={recipe.recipe.label} />
+          <img className="recipe-image" src={recipeImage} alt={recipe.recipe.label} />
         </>)
       }
       </li>
@@ -62,15 +97,3 @@ function RecipeCard({recipe}) {
 
 export default RecipeCard
 
-//SIDE 1
-//recipe name........ label
-//recipe image..... images.THUMBNAIL.url
-//recipe button 
-//favorites icon
-
-//SIDE 2
-//ingredients
-//health labels
-
-
-//STEP 2 Conditionally Render image v. recipe

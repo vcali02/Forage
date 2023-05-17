@@ -1,9 +1,9 @@
 import React from 'react'
 import {useEffect, useState} from 'react'
 import RecipeCard from './RecipeCard'
-function MyRecipes({myRecipes, setMyRecipes}) {
+function MyRecipes() {
 
-    // const [myRecipes, setMyRecipes] = useState([])
+    const [myRecipes, setMyRecipes] = useState([])
 
 
 
@@ -17,7 +17,7 @@ function MyRecipes({myRecipes, setMyRecipes}) {
     <div className="recipe-list">
         {
           [...myRecipes].map((recipe, index) => {
-              return <RecipeCard key={index} recipe={recipe} />
+              return <RecipeCard key={index} recipe={recipe} parentFavorite={true} />
           })
         } 
 
