@@ -26,11 +26,9 @@ function RecipeForm({addRecipe}) {
     //console.log(form)
     fetch("http://localhost:3000/myRecipes", {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
-        "content-type" : "application/json",
+        "content-type" : "application/json"},
       body: JSON.stringify(form)
-      }
     })
     .then(res => res.json())
     .then(data => {
@@ -44,7 +42,7 @@ function RecipeForm({addRecipe}) {
 
   return (
      <div className="new-recipe-form" >
-     <h2>New Recipe</h2>
+     <h2 className="new-recipe-title">New Recipe</h2>
      <form onSubmit={(e) => handleSubmit(e)}>
        
        <input 

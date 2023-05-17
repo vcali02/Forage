@@ -4,7 +4,7 @@ function RecipeCard({recipe}) {
   //flip state
   const [isFlipped, setFlip] = useState(false)
   //2. favorite/unfavorite state
-  const [isFavorite, setFavorite] = useState(true)
+  const [isFavorite, setFavorite] = useState(false)
 
 
 
@@ -26,8 +26,9 @@ function RecipeCard({recipe}) {
 
   return (
     
-    <li className="card" onClick={(e) => handleClick(e)}>
-       {/*ternary to toggle favorite/unfavorite*/}
+    <ul className="card" >
+       <li>
+        {/*ternary to toggle favorite/unfavorite*/}
        {isFavorite ? (
           <button 
           className="emoji-button favorite active" 
@@ -37,7 +38,9 @@ function RecipeCard({recipe}) {
           className="emoji-button favorite" 
           onClick={(e) => handleFavoriteClick(e)}>☆</button>
         )}
-      {
+        </li>
+        <li onClick={(e) => handleClick(e)}>
+        {
         isFlipped ?
         (<>
         <h4 className="recipe-title-side-2" >{recipe.recipe.label}</h4>
@@ -51,8 +54,8 @@ function RecipeCard({recipe}) {
           <img className="recipe-image" src={recipe.recipe.images.SMALL.url} alt={recipe.recipe.label} />
         </>)
       }
-      
-  </li>
+      </li>
+  </ul>
   )
 }
 

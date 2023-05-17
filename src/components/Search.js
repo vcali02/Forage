@@ -40,7 +40,7 @@ function handleAPIChange(e){
     type="text" 
     onChange={(e)=>handleAPIChange(e)} 
     value={ApiSearch} 
-    placeholder="search ingredient here"
+    placeholder="search..."
     className="search-input"/>
     <button onClick={(e)=>handleSubmit(e)}
     className="search-button">Search</button>

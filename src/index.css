@@ -19,6 +19,7 @@ body {
 
 /*HEADER**********************************************************************/
 .header {
+  
   position: sticky;
   text-align: center;
   list-Style: none;
@@ -81,7 +82,19 @@ nav a:hover{
   font-size: 20px;
   font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
   width: 950px;
-  height: 400px;
+  height: 415px;
+}
+.new-recipe-title{
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  font-size: 40px;
+  border: none;
+  padding: 5px;
+  background: #d2dbcc;
+  border-radius: 40px;
+  margin-left: 330px;
+  margin-right: 330px;
+  margin-top: 10px;
+  margin-bottom: 12px;
 }
 
 .new-recipe-form-input {
@@ -156,22 +169,39 @@ nav a:hover{
   font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;;
 }
 
+/* .about-image-parent {
+  position: relative;
+} */
+
 .about-text{
   text-align: center;
   border: none;
   margin-top: 30px;
-}
-/* .header-format {
-  margin : 0;
-  padding: 0;
-  width: 80vw;
+  margin-left: 250px;
   position: absolute;
-  left: 53.5%;
-  transform: translateX(-50%);
-  display: grid;
-  grid-Template-Columns: repeat(auto-fill, 250px);
-  grid-Auto-Rows: auto;
+  
+}
+/* .about-image-parent figcaption {
+ position: absolute;
+ top: 10%;
+ bottom: 50%;
+ left: 20%;
+ color: grey;
+ background-Color: white;
+ opacity: 0.4;
+ text-opacity: 1; 
 } */
+ /* .about-image {
+  opacity: 0.4;
+  position: sticky;
+  width: 1350px;
+ } */
+
+ /* .about-image-parent img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+ } */
 
 /*SEARCH**********************************************************************/
 .search-box {
