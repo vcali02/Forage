@@ -5,7 +5,14 @@ function RecipeForm() {
 
   const formTemplate = {
     label: "",
-    healthLabels: true,
+    healthLabels: {
+      "Vegan" : false,
+      "Vegetarian" : false,
+      "Pescatarian" : false,
+      "Gluten-Free" : false,
+      "Dairy-Free" : false,
+      "Alcohol-Free" : false,
+                  },
     ingredients: "",
     recipe: "",
     image: "",
@@ -20,6 +27,19 @@ function RecipeForm() {
     setForm({
       ...form,
       [e.target.name] : e.target.value
+    })
+  }
+
+  function handleCheckbox(e){
+    console.log(e.target.name)
+    console.log(form.healthLabels[e.target.name])
+    console.log(e.target.checked)
+    setForm({
+      ...form,
+      healthLabels: {
+        ...form.healthLabels,
+        [e.target.name] : e.target.checked
+      }
     })
   }
 
@@ -54,14 +74,75 @@ function RecipeForm() {
        onChange={(e) => handleChange(e)}
        className="new-recipe-form-input"
        />
+       
+       <div>
+       {/*dietary checkbox*/}
+       <label className="new-recipe-form-checkbox-label">
        <input 
-       value= {form.healthLabels} 
+      checked= {form.healthLabels["Vegan"]}
        type="checkbox" 
-       name="healthLabels"  
+       name="Vegan"  
        placeholder="Health Label" 
-       onChange={(e) => handleChange(e)}
-       className="new-recipe-form-input"
+       onChange={(e) => handleCheckbox(e)}
+       className="new-recipe-form-checkbox"
        />
+       Vegan</label>
+        {/*dietary checkbox*/}
+        <label className="new-recipe-form-checkbox-label">
+        <input 
+       checked= {form.healthLabels["Vegetarian"]} 
+       type="checkbox" 
+       name="Vegetarian"  
+       placeholder="Health Label" 
+       onChange={(e) => handleCheckbox(e)}
+       className="new-recipe-form-checkbox"
+       />
+       Vegetarian</label>
+        {/*dietary checkbox*/}
+        <label className="new-recipe-form-checkbox-label">
+        <input 
+       checked= {form.healthLabels["Pescatarian"]} 
+       type="checkbox" 
+       name="Pescatarian"  
+       placeholder="Health Label" 
+       onChange={(e) => handleCheckbox(e)}
+       className="new-recipe-form-checkbox"
+       />
+       Pescatarian</label>
+        {/*dietary checkbox*/}
+        <label className="new-recipe-form-checkbox-label">
+        <input 
+       checked= {form.healthLabels["Gluten-Free"]} 
+       type="checkbox" 
+       name="Gluten-Free"  
+       placeholder="Health Label" 
+       onChange={(e) => handleCheckbox(e)}
+       className="new-recipe-form-checkbox"
+       />
+       Gluten-Free</label>
+        {/*dietary checkbox*/}
+        <label className="new-recipe-form-checkbox-label">
+        <input 
+       checked= {form.healthLabels["Dairy-Free"]} 
+       type="checkbox" 
+       name="Dairy-Free"  
+       placeholder="Health Label" 
+       onChange={(e) => handleCheckbox(e)}
+       className="new-recipe-form-checkbox"
+       />
+       Dairy-Free</label>
+        {/*dietary checkbox*/}
+        <label className="new-recipe-form-checkbox-label">
+        <input 
+       checked= {form.healthLabels["Alcohol-Free"]} 
+       type="checkbox" 
+       name="Alcohol-Free"  
+       placeholder="Health Label" 
+       onChange={(e) => handleCheckbox(e)}
+       className="new-recipe-form-checkbox"
+       />
+       Alcohol-Free</label>
+       </div>
        <input 
        value= {form.image} 
        type="text" 
