@@ -6,12 +6,12 @@ function RecipeForm() {
   const formTemplate = {
     label: "",
     healthLabels: {
-      "Vegan" : false,
-      "Vegetarian" : false,
-      "Pescatarian" : false,
-      "Gluten-Free" : false,
-      "Dairy-Free" : false,
-      "Alcohol-Free" : false,
+      'Vegan' : false,
+      'Vegetarian' : false,
+      'Pescatarian' : false,
+      'Gluten-Free' : false,
+      'Dairy-Free' : false,
+      'Alcohol-Free' : false,
                   },
     ingredients: "",
     recipe: "",
@@ -31,9 +31,9 @@ function RecipeForm() {
   }
 
   function handleCheckbox(e){
-    console.log(e.target.name)
-    console.log(form.healthLabels[e.target.name])
-    console.log(e.target.checked)
+    // console.log(e.target.name)
+    // console.log(form.healthLabels[e.target.name])
+    // console.log(e.target.checked)
     setForm({
       ...form,
       healthLabels: {
@@ -46,11 +46,15 @@ function RecipeForm() {
 
   function handleSubmit(e){
     e.preventDefault()
+    let healthLabelArray = []
+    for (const key in form.healthLabels){if(form.healthLabels[key]){healthLabelArray.push(key)}}
+    console.log(healthLabelArray)
+    
     fetch("http://localhost:3000/myRecipes", {
       method: 'POST',
       headers: {
         "content-type" : "application/json"},
-      body: JSON.stringify({recipe:form})
+      body: JSON.stringify({recipe:{...form, healthLabels: healthLabelArray}})
     })
     .then(res => res.json())
     .then(data => {

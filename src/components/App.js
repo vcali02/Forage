@@ -45,13 +45,6 @@ function changeRecipes(array){
 }
 
 
-// //STEP 3. adding recipes submitted in the form to the db.json
-// function addRecipe(recipe){
-//   setRecipes(
-//     [...recipes, recipe]
-//   )
-// } 
-
 
 
   return (
@@ -62,7 +55,7 @@ function changeRecipes(array){
         <Switch>
           {/**user route to home**/}
           <Route path = "/home">
-            <RecipeList recipes={filteredRecipes} search={search} setSearch={setSearch} changeRecipes={changeRecipes}/>
+            <RecipeList recipes={recipes} search={search} setSearch={setSearch} changeRecipes={changeRecipes}/>
           </Route>
           {/**user route to recipe form**/}
           <Route path="/new">
@@ -78,7 +71,7 @@ function changeRecipes(array){
           </Route>
           {/**user route to main/home**/}
           <Route path = "/">
-            <RecipeList recipes={filteredRecipes} search={search} setSearch={setSearch} changeRecipes={changeRecipes}/>
+            <RecipeList recipes={recipes} search={search} setSearch={setSearch} changeRecipes={changeRecipes}/>
           </Route>
         </Switch>
     </div>

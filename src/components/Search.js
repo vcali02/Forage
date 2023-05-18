@@ -53,8 +53,9 @@ function Search({search, setSearch, changeRecipes}) {
       if(labelForm['Dairy-Free']) {url = url + "&health=dairy-free"}
       if(labelForm['Gluten-Free']) {url = url + "&health=gluten-free"}
       if(labelForm['Pescatarian']) {url = url + "&health=pescatarian"}
+      if(labelForm['Vegetarian']) {url = url + "&health=vegetarian"}
       if(labelForm['Vegan']) {url = url + "&health=vegan"}
-      if(labelForm['Vegetarian']) {url = url + "&health=Vegetarian"}
+      
       
 
 
