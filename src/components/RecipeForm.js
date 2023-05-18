@@ -13,7 +13,7 @@ function RecipeForm() {
       'Dairy-Free' : false,
       'Alcohol-Free' : false,
                   },
-    ingredients: "",
+    ingredientLines: "",
     recipe: "",
     image: "",
     mealType: ""
@@ -49,12 +49,15 @@ function RecipeForm() {
     let healthLabelArray = []
     for (const key in form.healthLabels){if(form.healthLabels[key]){healthLabelArray.push(key)}}
     console.log(healthLabelArray)
+
+    let ingredientArray = form.ingredientLines.split(" ")
+    
     
     fetch("http://localhost:3000/myRecipes", {
       method: 'POST',
       headers: {
         "content-type" : "application/json"},
-      body: JSON.stringify({recipe:{...form, healthLabels: healthLabelArray}})
+      body: JSON.stringify({recipe:{...form, healthLabels: healthLabelArray, ingredientLines: ingredientArray}})
     })
     .then(res => res.json())
     .then(data => {
@@ -156,10 +159,10 @@ function RecipeForm() {
        className="new-recipe-form-input"
        />
        <input 
-       value= {form.recipe} 
+       value= {form.ingredientLines} 
        type="text" 
-       name="recipe"  
-       placeholder="Recipe" 
+       name="ingredientLines"  
+       placeholder="Ingredients" 
        onChange={(e) => handleChange(e)}
        className="new-recipe-form-input-ingredients"
        />
