@@ -53,6 +53,7 @@ function RecipeCard({recipe, parentFavorite}) {
     let healthLabelString = recipe.recipe.healthLabels.join(', ')
     let ingredientString = recipe.recipe.ingredientLines.join(', ')
     
+    
 
     let recipeImage = ""
     recipe.recipe.images === undefined ? recipeImage = recipe.recipe.image : recipeImage = recipe.recipe.images.SMALL.url
