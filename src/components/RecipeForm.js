@@ -57,8 +57,10 @@ function RecipeForm() {
       method: 'POST',
       headers: {
         "content-type" : "application/json"},
-      body: JSON.stringify({recipe:{...form, healthLabels: healthLabelArray, ingredientLines: ingredientArray}})
-    })
+
+      body: JSON.stringify({recipe:form})
+    })  
+
     .then(res => res.json())
     .then(data => {
     //   addRecipe(data)

@@ -107,22 +107,8 @@ function Search({search, setSearch, changeRecipes}) {
         
         <label>
           <input type='checkbox' name="Dairy-Free" checked={labelForm['Dairy-Free']} onChange={(e)=>handleCheckbox(e)}></input>
-          Dairy-Free</label>
-        <label>
-          <input type='checkbox' name="Gluten-Free" checked={labelForm['Gluten-Free']} onChange={(e)=>handleCheckbox(e)}></input>
-          Gluten-Free</label>
-        <label>  
-          <input type='checkbox' name="Vegan" checked={labelForm['Vegan']} onChange={(e)=>handleCheckbox(e)}></input>
-          Vegan</label>
-        <label>
-          <input type='checkbox' name="Vegetarian" checked={labelForm['Vegetarian']} onChange={(e)=>handleCheckbox(e)}></input>
-          Vegetarian</label>
-        <label>
-          <input type='checkbox' name="Alcohol-Free" checked={labelForm['Alcohol-Free']} onChange={(e)=>handleCheckbox(e)}></input>
-          Alcohol-Free</label>
-        <label>
-          <input type='checkbox' name="Pescatarian" checked={labelForm['Pescatarian']} onChange={(e)=>handleCheckbox(e)}></input>
-          Pescatarian</label>
+          
+        </label>
       </ul>
     </ul>) 
 
