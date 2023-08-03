@@ -6,14 +6,14 @@ function RecipeForm() {
   const formTemplate = {
     label: "",
     healthLabels: {
-      "Vegan" : false,
-      "Vegetarian" : false,
-      "Pescatarian" : false,
-      "Gluten-Free" : false,
-      "Dairy-Free" : false,
-      "Alcohol-Free" : false,
+      'Vegan' : false,
+      'Vegetarian' : false,
+      'Pescatarian' : false,
+      'Gluten-Free' : false,
+      'Dairy-Free' : false,
+      'Alcohol-Free' : false,
                   },
-    ingredients: "",
+    ingredientLines: "",
     recipe: "",
     image: "",
     mealType: ""
@@ -31,9 +31,9 @@ function RecipeForm() {
   }
 
   function handleCheckbox(e){
-    console.log(e.target.name)
-    console.log(form.healthLabels[e.target.name])
-    console.log(e.target.checked)
+    // console.log(e.target.name)
+    // console.log(form.healthLabels[e.target.name])
+    // console.log(e.target.checked)
     setForm({
       ...form,
       healthLabels: {
@@ -46,12 +46,21 @@ function RecipeForm() {
 
   function handleSubmit(e){
     e.preventDefault()
+    let healthLabelArray = []
+    for (const key in form.healthLabels){if(form.healthLabels[key]){healthLabelArray.push(key)}}
+    console.log(healthLabelArray)
+
+    let ingredientArray = form.ingredientLines.split(" ")
+    
+    
     fetch("http://localhost:3000/myRecipes", {
       method: 'POST',
       headers: {
         "content-type" : "application/json"},
+
       body: JSON.stringify({recipe:form})
     })  
+
     .then(res => res.json())
     .then(data => {
     //   addRecipe(data)
@@ -152,10 +161,10 @@ function RecipeForm() {
        className="new-recipe-form-input"
        />
        <input 
-       value= {form.recipe} 
+       value= {form.ingredientLines} 
        type="text" 
-       name="recipe"  
-       placeholder="Recipe" 
+       name="ingredientLines"  
+       placeholder="Ingredients" 
        onChange={(e) => handleChange(e)}
        className="new-recipe-form-input-ingredients"
        />
