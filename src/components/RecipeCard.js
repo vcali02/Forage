@@ -50,10 +50,24 @@ function RecipeCard({recipe, parentFavorite}) {
 
 
     //STEP 3. FORM: conditional to differentiate b/t API and local host
-    let healthLabelString = recipe.recipe.healthLabels
-    if(typeof healthLabelString === "object") {recipe.recipe.healthLabels.join(', ')}
-    let ingredientString = recipe.recipe.ingredientLines
-    if(typeof ingredientString === "object") {recipe.recipe.ingredientLines.join(', ')}
+    let healthLabelString = recipe.recipe.healthLabels;
+    if (typeof healthLabelString === "object") {
+      if (Array.isArray(healthLabelString)) {
+      healthLabelString = healthLabelString.join(', ');
+      } else {
+      healthLabelString = Object.keys(healthLabelString).filter((label) => healthLabelString[label]).join(', ');
+      }
+    }
+
+    let ingredientString = recipe.recipe.ingredients;
+    if (Array.isArray(ingredientString)) {
+      ingredientString = ingredientString.join(', ');
+    }
+    
+    // let healthLabelString = recipe.recipe.healthLabels
+    // if(typeof healthLabelString === "object") {recipe.recipe.healthLabels.join(', ')}
+    // let ingredientString = recipe.recipe.ingredientLines
+    // if(typeof ingredientString === "object") {recipe.recipe.ingredientLines.join(', ')}
 
     let recipeImage = ""
     recipe.recipe.images === undefined ? recipeImage = recipe.recipe.image : recipeImage = recipe.recipe.images.SMALL.url
