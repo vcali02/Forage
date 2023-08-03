@@ -51,7 +51,7 @@ function RecipeForm() {
       headers: {
         "content-type" : "application/json"},
       body: JSON.stringify({recipe:form})
-    })
+    })  
     .then(res => res.json())
     .then(data => {
     //   addRecipe(data)
